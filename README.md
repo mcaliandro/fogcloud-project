@@ -46,7 +46,7 @@ The front-end is developed in Python and Flask to perform GET requests to the Co
 **Core Stack** ([source](https://github.com/mcaliandro/fogcloud-project/tree/master/application/core-stack/v2))  
 In this version, the back-end APIs replace the resource *User* with *Login* that allow the Dashboard stack to perform the login of the user by using GET */login*. Instead, GET */shs/id* and PUT */shs/id* operations on the resource *SHS* are still accepted.
 
-**Dashboard Stack** ([source](https://github.com/mcaliandro/fogcloud-project/tree/master/application/dashboard-stack/v2))  
+**Dashboard Stack** ([source](https://www.creative-tim.com/product/argon-dashboard))  
 The front-end is developed in AngularJS and provides a graphical interface accessible via web browser. The front-end application requires the user to perform the login to the system in order to retrieve the information about the SHS.
 
 ## 3. Why PaaS
