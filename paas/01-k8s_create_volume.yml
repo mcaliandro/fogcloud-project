@@ -1,0 +1,46 @@
+# Storage Class configuration
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: manual
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+---
+# Persistent Volume Configuration
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: datastore-pv
+spec:
+  capacity:
+    storage: 100Mi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: manual
+  hostPath:
+    path: /mnt/volume # specify the mount point
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - smarthome-worker # specify the node name here
+---
+# Persistent Volume Claim configuration
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: datastore-pvc
+  labels:
+    app: datastore
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi

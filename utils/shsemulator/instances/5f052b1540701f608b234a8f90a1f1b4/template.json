@@ -1,0 +1,70 @@
+{
+    "shsid": "5f052b1540701f608b234a8f90a1f1b4",
+    "lastupdate": "2020/01/01 00:00:00",
+    "appliances": [
+        {
+            "name": "Air Conditioner",
+            "status": "OFF",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.00 KWh"
+        },
+        {
+            "name": "Dishwasher",
+            "status": "ON",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.50 KWh"
+        },
+        {
+            "name": "Fridge",
+            "status": "ON",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.50 KWh"
+        },
+        {
+            "name": "Hoven",
+            "status": "OFF",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.00 KWh"
+        },
+        {
+            "name": "TV Bedroom Room",
+            "status": "OFF",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.00 KWh"
+        },
+        {
+            "name": "TV Living Room",
+            "status": "OFF",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "0.00 KWh"
+        },
+        {
+            "name": "Washing machine",
+            "status": "ON",
+            "lastcheck": "2020/01/01 00:00:00",
+            "consumption": "1.00 KWh"
+        }
+    ],
+    "areas": [
+        {
+            "name": "Kitchen",
+            "consumption": "1.00 KWh",
+            "rate": "+ 25.00%"
+        },
+        {
+            "name": "Living Room",
+            "consumption": "0.00 KWh",
+            "rate": "+ 0.00%"
+        },
+        {
+            "name": "Laundry Room",
+            "consumption": "1.00 KWh",
+            "rate": "+ 50.00%"
+        },
+        {
+            "name": "Bedroom",
+            "consumption": "0.00 KWh",
+            "rate": "+ 0.00%"
+        }
+    ]
+}
