@@ -25,7 +25,7 @@ spec:
           value: "30050" # use the master node's exposed port
         imagePullPolicy: Always    
       imagePullSecrets:
-      - name: regcred # credentials for pulling from DockerHub
+      - name: dockerhub # credentials for pulling from DockerHub
 ---
 # Service configuration
 kind: Service

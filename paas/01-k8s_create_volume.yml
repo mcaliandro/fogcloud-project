@@ -2,7 +2,7 @@
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
-  name: manual
+  name: local-storage
 provisioner: kubernetes.io/no-provisioner
 volumeBindingMode: WaitForFirstConsumer
 ---
@@ -18,7 +18,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
-  storageClassName: manual
+  storageClassName: local-storage
   hostPath:
     path: /mnt/volume # specify the mount point
   nodeAffinity:
@@ -38,7 +38,7 @@ metadata:
   labels:
     app: datastore
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
   - ReadWriteOnce
   resources:
