@@ -7,8 +7,8 @@ import os
 
 app = Flask(__name__)
 
-host = os.getenv('CORESTACK_HOST')
-port = os.getenv('CORESTACK_PORT')
+host = os.getenv('CORE_STACK_SERVICE_HOST')
+port = os.getenv('CORE_STACK_SERVICE_PORT')
 
 api_service = "http://{}:{}".format(host, port)
 userslist = load(open("./list.json", "r"))

@@ -18,11 +18,6 @@ spec:
         image: mcaliandro/smarthome:dashboardv1 # using the private repository on DockerHub
         ports:
         - containerPort: 5000
-        env:
-        - name: CORESTACK_HOST
-          value: "<ip-address>" # use the master node's IP address
-        - name: CORESTACK_PORT
-          value: "30050" # use the master node's exposed port  
       imagePullSecrets:
       - name: dockerhub # credentials for pulling from DockerHub
 ---
