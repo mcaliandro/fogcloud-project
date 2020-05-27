@@ -22,7 +22,7 @@ A database in which all the information about the SHS is stored. More specifical
 A back-end application, written from the scratch in Python and developed by using [Flask](https://palletsprojects.com/p/flask/) framework and [Flask RESTPlus](https://flask-restplus.readthedocs.io/en/stable/) extension, that exposes REST APIs for exchanging data between the SHS and the house owners. It is directly connected to a data store in order to persist the information sent by the remote system and to retrieve it when users ask for it.
 
 ### 1.3 Dashboard 
-A front-end application that shows a dashboard in which users (house owners) can access the information provided by the SHS. The application has two versions: one developed in Python by using Flask, one is an adaptation of the free [Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard) made by CreativeTim.com, developed in [AngularJS](https://angularjs.org/).
+A front-end application that shows a dashboard in which users (house owners) can access the information provided by the SHS. The application is developed in Python by using Flask.
 
 ### 1.4. Smart Home System Emulation
 The application doesn't rely on any specific implementation of a SHS, so it has been assumed that a device connected to the Internet, such as a Raspberry Pi, collects information about the SHS status in real time and sends it to the application. For this reason, the platform exposes APIs, so that the interaction with multiple devices can be emulated by using a Python script ([shs-simulator](https://github.com/mcaliandro/fogcloud-project/tree/master/utils/shs-emulator)) that periodically sends HTTP's PUT requests to the platform, containing the data about the (supposed) updated status of the SHS. This script is used to test the performance of the application under high workload too.
@@ -33,7 +33,7 @@ To test the performance of the application on the PaaS, a Python script ([ho-sim
 ## 2. Version Deployments
 
 ### 2.1. Datastore
-Once the datastore is deployed, it will run for the entire application's lifecycle, without being affected by subsequent version deployments of the application. The datastore is initialized through a Python script ([populate-db](https://github.com/mcaliandro/fogcloud-project/tree/master/utils/initdb)) that populates it by performing HTTP requests to Core.
+Once the datastore is deployed, it will run for the entire application's lifecycle, without being affected by subsequent version deployments of the application. The datastore is initialized through a Python script ([initdb](https://github.com/mcaliandro/fogcloud-project/tree/master/utils/initdb)) that populates it by performing HTTP requests to Core.
 
 ### 2.2. Version 1
 **Core** ([source](https://github.com/mcaliandro/fogcloud-project/tree/master/application/core/v1))  
@@ -45,9 +45,6 @@ The front-end is developed in Python and Flask to perform GET requests to Core a
 ### 2.3. Version 2
 **Core** ([source](https://github.com/mcaliandro/fogcloud-project/tree/master/application/core-stack/v2))  
 In this version, the back-end APIs replace the resource *User* with *Login* that allow Dashboard to perform the login of the user by using GET */login*. Instead, GET */shs/id* and PUT */shs/id* operations on the resource *SHS* are still accepted.
-
-**Dashboard Stack** ([source](https://www.creative-tim.com/product/argon-dashboard))  
-The front-end is developed in AngularJS and provides a graphical interface accessible via web browser. The front-end application requires the user to perform the login to the system in order to retrieve the information about the SHS.
 
 ## 3. Why PaaS
 

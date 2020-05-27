@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: dashboard
-        image: mcaliandro/smarthome:dashboard-v1 # using the private repository on DockerHub
+        image: mcaliandro/smarthome:dashboardv1 # using the private repository on DockerHub
         ports:
         - containerPort: 5000
         env:

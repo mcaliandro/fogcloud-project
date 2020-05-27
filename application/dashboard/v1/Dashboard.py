@@ -11,13 +11,13 @@ host = os.getenv('CORESTACK_HOST')
 port = os.getenv('CORESTACK_PORT')
 
 api_service = "http://{}:{}".format(host, port)
-shslist = load(open("./list.json", "r"))
+userslist = load(open("./list.json", "r"))
 
 @app.route("/")
 def main():
-    random = randint(0, len(shslist))
-    shs = shslist[random]
-    url = "{}/shs/{}".format(api_service, shs)
+    random = randint(0, len(userslist))
+    userid = userslist[random]
+    url = "{}/user/{}".format(api_service, userid)
     response = requests.get(url)
     if response.status_code == requests.codes.get("ok"):
         data = loads(response.json())
