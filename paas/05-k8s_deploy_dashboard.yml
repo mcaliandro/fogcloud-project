@@ -22,8 +22,7 @@ spec:
         - name: CORESTACK_HOST
           value: "<ip-address>" # use the master node's IP address
         - name: CORESTACK_PORT
-          value: "30050" # use the master node's exposed port
-        imagePullPolicy: Always    
+          value: "30050" # use the master node's exposed port  
       imagePullSecrets:
       - name: dockerhub # credentials for pulling from DockerHub
 ---

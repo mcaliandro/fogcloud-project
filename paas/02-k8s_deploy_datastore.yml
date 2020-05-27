@@ -16,7 +16,7 @@ spec:
 kind: StatefulSet
 apiVersion: apps/v1
 metadata:
-  name: datastore
+  name: datastore-stateful
 spec:
   serviceName: datastore-stack
   replicas: 1

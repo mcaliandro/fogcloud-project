@@ -25,7 +25,6 @@ spec:
           value: "27017" # define the exposed port
         - name: DB_NAME
           value: "smarthome" # define the database name
-        imagePullPolicy: Always
       imagePullSecrets:
       - name: dockerhub # credential for pulling from DockerHub
 ---
