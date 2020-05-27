@@ -48,8 +48,7 @@ class HouseOwner(Resource):
     def get(self, id):
         userData = User.objects(userid=id).first()
         if not userData: api.abort(403)
-        shsid = userData.get("shsid")
-        shsData = SmartHomeSystem.objects(shsid=shsid).first()
+        shsData = SmartHomeSystem.objects(shsid=userData.shsid).first()
         if not shsData: api.abort(404)
         return shsData, 200
 
