@@ -46,6 +46,9 @@ The front-end is developed in Python and Flask to perform GET requests to Core a
 **Core** ([source](https://github.com/mcaliandro/fogcloud-project/tree/master/application/core-stack/v2))  
 In this version, the back-end APIs replace the resource *User* with *Login* that allow Dashboard to perform the login of the user by using GET */login*. Instead, GET */shs/id* and PUT */shs/id* operations on the resource *SHS* are still accepted.
 
+**Dashboard** 
+The front-end keeps the vesion 1 which doesn't work with the new version of Core because it doesn't implement the new changes required by the back-end, like the user authentication to the platform.
+
 ## 3. Why PaaS
 
 ### 3.1. Application Requirements
