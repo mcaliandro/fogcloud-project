@@ -21,7 +21,14 @@ def main():
     response = requests.get(url=url)
     if response.status_code == requests.codes.get('ok'):
         data = loads(response.json())
-        return render_template("index.html", data=data)
+        shsid = data.get("shsid")
+        url = "{}/shs/{}".format(api_service, shsid)
+        response = requests.get(url=url)
+        if response.status_code == requests.codes.get('ok'):
+            data = loads(response.json())
+            return render_template("index.html", data=data)
+        else:
+            return render_template("error.html", data=response.status_code)
     else:
         return render_template("error.html", data=response.status_code)
 
